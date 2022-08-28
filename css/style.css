@@ -1,0 +1,607 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Rasa:wght@300;500&display=swap');
+@import url(about.css);
+
+/* 
+font-family: 'Rasa', serif;
+*/
+
+:root {
+    --fuenteprincipal: 'Rasa', serif;
+    --fontsize: 20px;
+    --anchomaximo: 1100px;
+    --margingrid: 23px;
+    --colorgris: #C7C7C7;
+    --colorgrisclaro: #EEEEEE;
+}
+
+
+
+* { /* Para no tener en cuenta el border ni el padding en el tamaño de las cajas RECOMENDADO*/
+    box-sizing: border-box;
+}
+
+sup { /* creo que la hoja de estilos reset me resetea la etiqueta sup y tengo que darle estilo de nuevo. Preguntar a Juan */
+    font-size: 0.7em; 
+    vertical-align: top;
+}
+
+body {
+    font-family: var(--fuenteprincipal);
+    font-weight: 300;
+}
+
+img {  /* Para ajustar la imagen a su contenedor. RECOMENDADO  */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #151515;
+}
+#wrapper {
+    padding: 0 1.5em;
+}
+
+.contenedor {
+    max-width: var(--anchomaximo);
+    margin: 0 auto;
+    /* background-color: yellow; */
+}
+
+/* inicio de cabecera */
+
+header {
+    /* background-color: blueviolet; */
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fontsize);  /* todo lo que hay en la cabecera tiene una fuente mas fina */
+}
+
+header>nav {
+    /* background-color: hotpink; */
+}
+
+#botonmenu {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--margingrid);
+    bottom: 0;
+    width: 385px;
+    /* background-color: chocolate; */
+}
+
+.menu li {
+    border-bottom: solid 1px #D0D0D0;
+}
+
+#vava {
+    /* background-color: green; */
+    padding-top: var(--margingrid);
+}
+
+
+/* fin de cabecera */
+
+/* inicio de main */
+
+/* inicio de hero */
+
+#hero {
+    display: flex;
+    background-image: url(../images/fondo.png);
+    height: 70vh;
+    margin-top: calc(var(--margingrid) * 1.5);
+    align-items: center;              /* esto junto con FLEX para alinear en el centro verticalmente el contenido */
+    justify-content: center;         /* esto junto con FLEX para alinear en el centro horizontalmente el contenido */
+
+}
+
+h1 {
+    font-size: 2em;
+    max-width: 500px;
+}
+
+/* fin de hero */
+
+
+
+h2 {
+    font-size: 2.5em;
+    margin: var(--margingrid) 0;
+    margin-top: calc(var(--margingrid) * 6);
+}
+
+
+#selectedprojects article {
+    display: grid;
+    grid-gap: calc(var(--margingrid)*0.6);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+
+#element1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    filter: grayscale(100%);    /* Para poner la imagen en blanco y negro */
+    cursor: pointer;
+    background-image: url("../images/vase-wooden.jpg");
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 50%;
+    transition: 1s;
+/*     position: relative;   Esto era para usar una cortina y que pareciese gris, pero el efecto es peor que gray scale*/
+} 
+/* .cortina {
+    background-color: rgba(136, 136, 136, 0.5);
+    background-blend-mode: multiply;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+} */
+
+#element1:hover {
+    transition: 1s;
+    filter: grayscale(0%);
+}
+
+#element2 {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    filter: grayscale(100%); 
+    cursor: pointer;  
+    background-image: url("../images/coo-coo-clock.png");
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 100%;
+    transition: 1s;
+}
+
+#element2:hover {
+    transition: 1s;
+    filter: grayscale(0%);
+}
+
+#element3 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    filter: grayscale(100%);
+    cursor: pointer;
+    background-image: url("../images/bottle-gradient-2.jpg");
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 50%;
+    transition: 1s;
+} 
+#element3:hover {
+    filter: grayscale(0%);
+}
+
+.viewall {
+    padding-top: calc(var(--margingrid) * 2);
+}
+.viewall a{
+    color: var(--colorgris);
+    border-bottom: solid 1px var(--colorgris);
+    font-size: 1.2em;
+}
+
+.viewall a:hover {
+    transition: 1s;
+    color: black;
+}
+
+/* inicio de our expertise */
+
+#ourexpertise section .flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+h3 {
+    font-size: 1.3em;
+    padding-top: 1em;
+}
+
+
+
+#ourexpertise section article figure{
+    width: 100%;
+}
+
+.icon img {
+    width: 120px;
+}
+
+.icon figcaption {
+    color: var(--colorgris);
+    padding-top: 0.5em;
+}
+
+/* fin de our expertise */
+/* inicio de price range */
+
+
+#pricerange .flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+#pricerange .flex article {
+    width: 30%;
+}
+
+#pricerange article {
+    display: inline-block;
+}
+
+#pricerange ul li {
+    color: #747474;
+    padding-top: 0.4em;
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 2em;
+}
+
+h5 {
+    font-size: 2.3em;
+}
+
+#pricerange h5 {
+    padding-top: 0.5em;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.boton a {
+    padding: 0.8em 1.8em;
+    background-color: var(--colorgrisclaro);
+}
+
+.boton a:hover {
+    transition: 1s;
+    background-color: var(--colorgris);
+}
+
+#pricerange hr {
+    color: var(--colorgrisclaro);
+}
+
+/* fin de price range */
+/* inicio de recent news */
+
+#recentnews .flex {
+    display: flex;
+}
+
+#recentnews .date {
+    color: var(--colorgris);
+    font-size: 1em;
+}
+
+#recentnews figcaption {
+    font-size: 1.6em;
+}
+
+#recentnews .flex article {
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+#recentnews .flex article figure { /* IMPORTANTE: le damos altura porcentual al figure + overflow hidden para igualar imagenes de diferente altura */
+    height: 85%;
+    overflow: hidden;
+    
+}
+
+#recentnews .flex article:first-child{
+    padding-right: var(--margingrid);
+}
+
+/* #recentnews .flex article:first-child img{
+    padding-right: var(--margingrid);
+} */
+
+#recentnews .flex article:nth-child(2) img {
+    
+} 
+
+#recentnews .flex article figure img {
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: 1s;   /* transition aqui para que haga tambien la transicion al quitarlo */
+}
+#recentnews .flex article figure img:hover {
+    filter: grayscale(0%);
+}
+/* fin de recent news */
+/* inicio de get in touch */
+
+#getintouch>div {
+    width: 100%;
+}
+
+#getintouch>div>div {
+    width: 40%;
+    font-size: 1.2em;
+}
+
+#getintouch>div>div>a {
+    border-bottom: 1px solid var(--colorgris);
+}
+
+/* fin de get in touch */
+/* fin de main */
+
+
+
+/* inicio de footer */
+#pie {
+    margin-top: calc(var(--margingrid) * 8);
+    height: 4em;
+}
+
+#copyright {
+    color: var(--colorgris);
+}
+
+/* fin de footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+
+ @media(max-width: 500px) {
+
+    #wrapper {
+        padding: 0;
+    }
+
+    /* inicio de cabecera y menu desplegable */
+
+    header {
+        /* background-color: blueviolet; */
+        justify-content: space-between;
+        font-size: 1.6em;
+        position: relative; /* para bajar el nav */
+
+    }
+    #botonmenu {
+        display: block;
+        padding-top: 0.8em;
+        padding-right: var(--margingrid);
+       /*  background-color: chocolate; */
+        cursor: pointer;
+    }
+
+
+
+    header nav{
+        display: none;
+        position: absolute;
+        padding-top: 0;
+        bottom: -290px;
+        width: 100%;
+        background-color: white;
+        z-index: 1; /* para que aparexca el menu por encima de las fotos de about */
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        /* background-color: lightblue; */
+        padding-top: 0;
+        width: 100%;
+    }
+
+    .menu li {
+        /* background-color: lightgreen; */
+        text-align: center;
+
+    }
+
+    .menu li a{
+        display: block;
+        width: 100%;
+        padding: 0.4em 0;
+    }
+
+    .menu li a:hover{
+        color: var(--colorgris);
+    }
+
+    #vava {
+        /* background-color: violet; */
+        padding-top: 0.8em;
+        padding-left: var(--margingrid);
+        padding-right: 0;
+    }
+
+    /* fin de cabecera y menu desplegable */
+
+    /* inicio de main */
+
+    h1 {
+        padding: 0 2em;
+        text-align: center;
+        margin-top: 4em;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    #selectedprojects article {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 1em;
+
+    }
+
+    #element1 {
+        grid-row: 1/2;
+
+    }
+
+    #element2 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    #element3 {
+        grid-row: 2/3;
+    }
+
+    
+
+    #getintouch>div>div {
+        width: 100%;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 0 1em;
+    }
+
+    .viewall {
+        text-align: center;
+    }
+
+
+    /* inicio de our expertise */
+
+    #ourexpertise section .flex {
+        flex-direction: column;
+    }
+
+    #ourexpertise section .flex article{
+        margin-top: 3em;
+    }
+
+    #ourexpertise section .flex article .icon>div{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+    }
+
+    #ourexpertise section .flex article .icon h3{
+        text-align: center;
+    }
+
+    #ourexpertise section .flex article .icon figcaption{
+        text-align: center;
+    }
+
+
+/* fin de our expertise */
+/* inicio de price range */
+
+    #pricerange .flex{
+        flex-direction: column;
+    }
+    
+    #pricerange .flex article {
+        width: 100%;
+    }
+    
+    #pricerange article {
+        text-align: center;
+    }
+
+    #pricerange hr {
+        width: 90%;
+    }
+
+    #pricerange .boton {
+        margin-bottom: 6em;
+    }
+
+/* fin de price range */
+/* inicio de recent news */
+
+#recentnews .flex {
+    flex-direction: column;
+    text-align: center;
+}
+
+#recentnews .flex article{
+    width: 100%;
+    margin-top: 2em;
+    padding: 0 1.5em;
+}
+
+/* fin de recent news */
+
+
+    /* fin de main */
+
+
+    /* inicio de footer */
+
+    #pie {
+        text-align: center;
+    }
+    
+    /* fin de footer */
+
+}
+ 

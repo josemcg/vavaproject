@@ -1,0 +1,239 @@
+
+
+/* INICIO PAGINA ABOUT */
+
+
+
+/* inicio de meet the team */
+
+#meettheteam h2{
+    margin: 2em 0;
+}
+
+#meettheteam article {
+    margin-left: 2.5em;
+    min-width: 215px;
+}
+
+#meettheteam section{
+    height: 650px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.rombo {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    transform: rotate(45deg);
+/*     background-color: lightgray; */
+    overflow: hidden; 
+    transition: 1s;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+   .rombo:hover {
+    transform: rotate(0deg);
+    filter: grayscale(0);
+    overflow: visible;
+
+/*     width: 220px;
+    height: 220px; */
+} 
+
+/* .rombo *:hover {
+    transform: rotate(0deg);
+} */
+
+
+.foto img {
+    position: absolute;
+    top: -40px;
+    left: -35px;
+    /* width: 145%; */
+    width: 270px;
+    transform: rotate(-45deg);
+    /* background-image: url("../images/annie.jpg");
+    background-repeat: no-repeat;
+    background-size: contain; */
+    /* transform: scale(150%); */
+    
+}
+.foto img:hover {
+    transform: rotate(0deg);
+}
+
+#meettheteam figcaption {
+    font-size: 1.3em;
+}
+
+#meettheteam figure {
+    position: relative;
+}
+
+#meettheteam .datosfoto {
+    position: absolute;
+    bottom: -90px;
+    right: 30px;
+    width: 100%;
+}
+
+#meettheteam .datosfoto * {
+    text-align: center;
+}
+
+
+/* fin de meet the team */
+/* inicio de  hiring */
+
+#hiring {
+    display: flex;
+    background-color: var(--colorgrisclaro);
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+}
+
+#hiring p {
+    font-size: 1.3em;
+}
+
+#hiring>p>a {
+    font-size: 1em;
+    border-bottom: solid 1px gray;
+    color: gray;
+}
+
+#hiring>p>a:hover {
+    color: black;
+}
+/* fin de hiring */
+
+/* inicio de our expertiese */
+
+#segundafila {
+    margin-top: 5em;
+}
+
+/* fin de our expertise */
+/* inicio de The way we work */
+
+
+
+#thewaywework ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#thewaywework li{
+    width: 20%;
+}
+
+#thewaywework li {
+    text-align: center;
+    padding: 10px 0;
+    color: var(--colorgris);
+    cursor: pointer;
+}
+
+
+#thewaywework .activo {
+    color: black;
+    border-bottom: 3px solid black;
+}
+
+#thewaywework #texto {
+    margin-top: 1em;
+}
+
+#analyse {
+    display: none;
+}
+
+#improve {
+    display: none;
+}
+
+#measure {
+    display: none;
+}
+
+#control {
+    display: none;
+}
+
+
+
+
+
+/* fin de the way we work */
+
+
+
+
+
+/* FIN PAGINA ABOUT */
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+
+@media(max-width: 500px) {
+    #segundafila {
+        margin-top: 0em;
+    }
+
+    #meettheteam section{
+        height: 2800px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .rombo {
+        margin-left: 75px;
+
+    }
+
+    #hiring {
+        margin: 0 1em;
+        text-align: center;
+    }
+
+
+    #texto {
+        padding: 0 1em;
+    }
+
+    
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
